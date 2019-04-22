@@ -22,7 +22,7 @@
 <body>
     <div data-role="page" id="Map" data-theme="a">
         <div data-role="header">
-            <h1 class="title is-4 has-text-white ">Explora</h1>
+            <h1 class="title is-4 has-text-white  ">Explora</h1>
         </div>
         <div data-role="content" id="mapContainer">
             <div id="map"></div>
@@ -30,9 +30,9 @@
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#Archive" data-transition="none">Archive</a></li>
-                    <li><a href="#Map" data-transition="none" class="ui-btn-active">Map</a></li>
-                    <li><a href="#Send" data-transition="none">Send</a></li>
+                    <li><a href="#Archive" data-transition="fade">Archive</a></li>
+                    <li class="active"><a href="#Map" data-transition="fade" class="active">Map</a></li>
+                    <li><a href="#Send" data-transition="fade">Send</a></li>
                 </ul>
             </div>
         </div>
@@ -47,9 +47,9 @@
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#Archive" data-transition="pop">Archive</a></li>
-                    <li><a href="#Map" data-transition="none">Map</a></li>
-                    <li><a href="#Send" data-transition="pop">Send</a></li>
+                    <li class="active"><a href="#Archive" data-transition="fade" class="active">Archive</a></li>
+                    <li><a href="#Map" data-transition="fade">Map</a></li>
+                    <li><a href="#Send" data-transition="fade">Send</a></li>
                 </ul>
             </div>
         </div>
@@ -62,14 +62,14 @@
             <div class="container">
                     <textarea class="textarea is-primary" placeholder="e.g. I came here with my crush" maxlength='280' ></textarea>
             </div>
-            <a class="button is-medium is-fullwidth is-primary"><i class="far fa-paper-plane"></i></a>
+            <a class="button is-medium is-fullwidth is-primary"><i class="icon far fa-paper-plane"></i></a>
         </div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#Archive" data-transition="none">Archive</a></li>
-                    <li><a href="#Map" data-transition="none">Map</a></li>
-                    <li><a href="#Send" data-transition="none">Send</a></li>
+                    <li><a href="#Archive" data-transition="fade">Archive</a></li>
+                    <li><a href="#Map" data-transition="fade">Map</a></li>
+                    <li class="active"><a href="#Send" data-transition="fade" class="active">Send</a></li>
                 </ul>
             </div>
         </div>

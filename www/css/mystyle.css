@@ -1,19 +1,21 @@
+html{
+    overflow: hidden !important;
+}
 /* Set up page to take whole screen without and padding */
 body{
     margin: 0 !important;
     padding: 0 !important;
-    overflow-y: hidden !important;
-    overflow-x: hidden !important;
 }
 
 
 [data-role="header"] {
     background-color: hsl(171, 100%, 41%) !important;
-    
+    border: 0 !important;
 }
-
-
-
+[data-role="footer"] {
+    background-color: hsl(0, 0%, 100%) !important;
+    border: 0 !important;
+}
 /* Remove padding around map on homepage */
 #mapContainer {
     padding: 0 !important;
@@ -27,4 +29,16 @@ body{
     height: 100vh;
     width: 100% !important;
 	overflow: hidden;
+}
+
+.active{
+    background-color: hsl(171, 100%, 41%) !important;
+    color: hsl(0, 0%, 100%) !important;
+    text-decoration: none;
+}
+a{
+    color: hsl(171, 100%, 41%) !important;
+}
+.icon{
+    color : hsl(0, 0%, 100%) !important;
 }
