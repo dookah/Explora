@@ -3,7 +3,9 @@
     <!--Set the pages viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+    <!-- Load in Cordova injected code -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    
     <!--Link my stylesheet-->
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/mystyle.css" />
@@ -11,7 +13,7 @@
     
 </head>
 
-<body onload="onLoad()">
+<body>
     <div data-role="page" id="home" data-theme="b">
         <div data-role="header">
             <h1>Home2</h1>
@@ -28,12 +30,14 @@
             <p>This is my first app build… how easy is this!</p>
         </div>
     </div>
+
     <!--Link javascript files after content loaded-->
-    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/jqm_defaults.js"></script>
+    <script src="js/jqm_defaults.js"></script>
+    
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>
