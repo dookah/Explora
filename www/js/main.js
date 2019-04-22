@@ -21,12 +21,18 @@ var onSuccess = function(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
 };
+
+
+//Only fires if error is thrown
 function onError(error) {
+    //Alert user of error 
     alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
 
+//Create an instance of the map
 var map;
+//Initilise map
 function initMap(){
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -34.397, lng: 150.644},

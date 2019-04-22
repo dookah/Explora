@@ -17,6 +17,10 @@
       This allows your app to load assets from all *.phongap.com domains
     -->
 	<access origin="*" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 	
 	 <!--
         If you do not want any permissions to be added to your app, add the
