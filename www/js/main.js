@@ -3,6 +3,7 @@
 document.addEventListener("deviceready", yourCallbackFunction, false);
 
 function yourCallbackFunction(){
+    alert("hello");
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 };
 
@@ -21,6 +22,8 @@ var map;
 function initMap(){
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -34.397, lng: 150.644},
-        zoom: 8
+        zoom: 8,
+        disableDefaultUI: true,
+        draggable: false
       });
 }

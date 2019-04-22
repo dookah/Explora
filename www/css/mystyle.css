@@ -1,15 +1,30 @@
+/* Set up page to take whole screen without and padding */
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+
+[data-role="header"] {
+    background-color: hsl(171, 100%, 41%) !important;
+    
+}
+
+
+
+/* Remove padding around map on homepage */
+#mapContainer {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Make map whole size of the screen and hide and overflow */
 #map {
     padding: 0 !important;
     margin: 0 !important;
     height: 100vh;
     width: 100% !important;
 	overflow: hidden;
-}
-body{
-    margin: 0 !important;
-    padding: 0 !important;
-}
-[data-role="content"] {
-    padding: 0 !important;
-    margin: 0 !important;
 }
