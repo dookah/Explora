@@ -1,5 +1,8 @@
 "use strict";
 
+//Create an instance of the map
+var map;
+
 document.addEventListener("deviceready", yourCallbackFunction, false);
 
 function yourCallbackFunction(){
@@ -12,14 +15,11 @@ function yourCallbackFunction(){
 };
 
 var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
+    pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+    };
+    map.setCenter(pos);
 };
 
 
@@ -30,8 +30,6 @@ function onError(error) {
           'message: ' + error.message + '\n');
 }
 
-//Create an instance of the map
-var map;
 //Initilise map
 function initMap(){
     map = new google.maps.Map(document.getElementById('map'), {
