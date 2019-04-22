@@ -2,20 +2,25 @@
 
 //Create an instance of the map
 var map;
+var map2;
 
-document.addEventListener("deviceready", yourCallbackFunction, false);
+document.addEventListener("deviceready", deviceReady, false);
 
-function yourCallbackFunction(){
+function deviceReady(){
     //Set the colour of the status bar if on android to match app theme
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#00C4A7");
     }
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    //Request devices location
+    navigator.geolocation.getCurrentPosition(onLocationSuccess, onError);
 };
 
-var onSuccess = function(position) {
+//Fired when location is found
+var onLocationSuccess = function(position) {
+    //Set center of map to current location
     map.setCenter(new google.maps.LatLng(position.coords.latitude, 
+        position.coords.longitude), 13);
+    map2.setCenter(new google.maps.LatLng(position.coords.latitude, 
         position.coords.longitude), 13);
 };
 
@@ -33,5 +38,12 @@ function initMap(){
         center: {lat: -34.397, lng: 150.644},
         zoom: 8,
         disableDefaultUI: true
+      });
+
+    map2 = new google.maps.Map(document.getElementById('map2'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 15,
+        disableDefaultUI: true,
+        draggable: false
       });
 }

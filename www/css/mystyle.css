@@ -7,6 +7,9 @@ body{
     padding: 0 !important;
 }
 
+textarea{
+    height: 50vh !important;
+}
 
 [data-role="header"] {
     background-color: hsl(171, 100%, 41%) !important;
@@ -31,6 +34,10 @@ body{
 	overflow: hidden;
 }
 
+#map2{
+    height: 20vh !important;
+    width: auto !important;
+}
 .active{
     background-color: hsl(171, 100%, 41%) !important;
     color: hsl(0, 0%, 100%) !important;
