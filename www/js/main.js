@@ -1,8 +1,15 @@
-alert("hello");
+"use strict";
 
-function onDeviceReady(){
-    navigator.notification.alert('Die!', callbackz, 'Done', 'Done2');
+document.addEventListener("deviceready", yourCallbackFunction, false);
+
+function yourCallbackFunction(){
+    navigator.notification.alert(
+        'You are the winner!',  // message
+        alertDismissed,         // callback
+        'Game Over',            // title
+        'Done'                  // buttonName
+    );
 };
-function callbackz(){
 
+function alertDismissed() {
 };
