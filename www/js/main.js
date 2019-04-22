@@ -15,11 +15,8 @@ function yourCallbackFunction(){
 };
 
 var onSuccess = function(position) {
-    pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-    };
-    map.setCenter(pos);
+    map.setCenter(new google.maps.LatLng(position.coords.latitude, 
+        position.coords.longitude), 13);
 };
 
 
