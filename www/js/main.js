@@ -1,5 +1,7 @@
-document.addEventListener("deviceready", setup, false);
+function onLoad(){
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
 
-function setup(){
-    alert("hello");
+function onDeviceReady(){
+    alert("Hello");
 }
