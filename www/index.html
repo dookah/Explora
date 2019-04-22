@@ -20,6 +20,9 @@
 </head>
 
 <body>
+    <!----------------------------------------------------------------------------------------------------------->
+    <!-------------------------------------------- Map Page ------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------------------->
     <div data-role="page" id="Map" data-theme="a">
         <div data-role="header">
             <h1 class="title is-4 has-text-white  ">Explora</h1>
@@ -37,12 +40,40 @@
             </div>
         </div>
     </div>
+
+    <!----------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------- Archive Page -------------------------------------------->
+    <!----------------------------------------------------------------------------------------------------------->
+
     <div data-role="page" id="Archive" data-theme="a">
         <div data-role="header">
             <h1 class="title is-4 has-text-white">Explora</h1>
         </div>
         <div data-role="content">
-            <div id="map"></div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-danger">
+                    <button class="delete is-medium"></button>
+                    <p class="title">A Great Day Out</p>
+                    <p class="subtitle">A message by a fellow explorer</p>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis odio ac maximus feugiat.
+                            Pellentesque tristique pharetra fringilla. Sed gravida turpis vel magna dignissim, quis
+                            hendrerit felis condimentum. </p>
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-info">
+                    <button class="delete is-medium"></button>
+                    <p class="title">Worst Day Ever!</p>
+                    <p class="subtitle">A message left by a wild wilderbeast</p>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis odio ac maximus feugiat.
+                            Pellentesque tristique pharetra fringilla. Sed gravida turpis vel magna dignissim, quis
+                            hendrerit felis condimentum. </p>
+                    </div>
+                </article>
+            </div>
         </div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
@@ -54,16 +85,21 @@
             </div>
         </div>
     </div>
+
+    <!----------------------------------------------------------------------------------------------------------->
+    <!----------------------------------------- Submit Page ------------------------------------------------>
+    <!----------------------------------------------------------------------------------------------------------->
+
     <div data-role="page" id="Send" data-theme="a">
         <div data-role="header">
             <h1 class="title is-4 has-text-white">Explora send</h1>
         </div>
         <div data-role="content">
-                <div class="box" id="map2"></div>
-            <div class="container">
-                    <textarea class="textarea is-primary" placeholder="e.g. I came here with my crush" maxlength='280' ></textarea>
-            </div>
-            <a id="messageButton" class="button is-medium is-fullwidth is-primary"><i class="icon far fa-paper-plane"></i></a>
+            <div class="box" id="map2"></div>
+            <input class="input" type="text" placeholder="Text input">
+            <textarea class="textarea is-primary inputMessage" placeholder="Message" maxlength='280'></textarea>
+            <a id="messageButton" class="button is-medium is-fullwidth is-primary"><i
+                    class="icon far fa-paper-plane"></i></a>
         </div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
@@ -83,6 +119,7 @@
     <!--Font Awesome 5 Icons (Javascript) Located at https://fontawesome.com/start -->
     <script src="js/all.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/archive.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3XiX8WHDK02uucffpB7Q43KR4tFhI-KE&callback=initMap"
         async defer></script>
 

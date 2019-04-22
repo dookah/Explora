@@ -7,8 +7,8 @@ body{
     padding: 0 !important;
 }
 
-textarea{
-    height: 50vh !important;
+.inputMessage{
+    height: 47vh !important;
 }
 
 [data-role="header"] {
