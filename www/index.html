@@ -8,26 +8,46 @@
     
     <!--Link my stylesheet-->
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css" />
     <link rel="stylesheet" href="css/mystyle.css" />
     <!--Injected for me-->
     
 </head>
 
 <body>
-    <div data-role="page" id="home" data-theme="b">
+    <div data-role="page" id="Map" data-theme="a">
         <div data-role="header">
-            <h1>Home2</h1>
+            <h1 class="title is-4 has-text-primary">Explora</h1>
+        </div>
+        <div data-role="content">
+            <div id="map"></div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="# " data-transition="none" data-icon="home">Home</a></li>
-                    <li><a href="# " data-transition="none" data-icon="plus">btn2</a></li>
-                    <li><a href="#" data-transition="none" data-icon="star">btn3</a></li>
+                    <li><a href="#Archive" data-transition="none" >Archive</a></li>
+                    <li><a href="#Map" data-transition="none" class="ui-btn-active" >Map</a></li>
+                    <li><a href="#Send" data-transition="none" >Send</a></li>
                 </ul>
             </div>
         </div>
+    </div>
+    <div data-role="page" id="Archive" data-theme="a">
+        <div data-role="header">
+            <h1 class="title is-4 has-text-primary">Explora</h1>
+        </div>
         <div data-role="content">
-            <h3>Boom!</h3>
-            <p>This is my first app build… how easy is this!</p>
+            <div id="map"></div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Archive" data-transition="none" >Archive</a></li>
+                    <li><a href="#Map" data-transition="none" >Map</a></li>
+                    <li><a href="#Send" data-transition="none" >Send</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -35,8 +55,10 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mobile-1.4.5.min.js"></script>
     <script src="js/jqm_defaults.js"></script>
-    
+
     <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3XiX8WHDK02uucffpB7Q43KR4tFhI-KE&callback=initMap"
+    async defer></script>
 
 </body>
 
