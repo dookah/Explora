@@ -1,7 +1,8 @@
-function onLoad(){
-    document.addEventListener("deviceready", onDeviceReady, false);
-}
+alert("hello");
 
 function onDeviceReady(){
-    alert("Hello");
-}
+    navigator.notification.alert('Die!', callbackz, 'Done', 'Done2');
+};
+function callbackz(){
+
+};
