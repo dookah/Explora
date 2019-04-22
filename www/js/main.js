@@ -4,6 +4,9 @@ document.addEventListener("deviceready", yourCallbackFunction, false);
 
 function yourCallbackFunction(){
     alert("hello");
+    if (cordova.platformId == 'android') {
+        StatusBar.backgroundColorByHexString("#00C4A7");
+    }
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 };
 
