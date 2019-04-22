@@ -3,10 +3,11 @@
 document.addEventListener("deviceready", yourCallbackFunction, false);
 
 function yourCallbackFunction(){
-    alert("hello");
+    //Set the colour of the status bar if on android to match app theme
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#00C4A7");
     }
+
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 };
 
@@ -20,6 +21,10 @@ var onSuccess = function(position) {
           'Speed: '             + position.coords.speed             + '\n' +
           'Timestamp: '         + position.timestamp                + '\n');
 };
+function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
 
 var map;
 function initMap(){
