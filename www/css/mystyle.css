@@ -1,6 +1,4 @@
-html{
-    overflow: hidden !important;
-}
+
 /* Set up page to take whole screen without and padding */
 body{
     margin: 0 !important;
@@ -39,7 +37,7 @@ body{
     width: auto !important;
 }
 
-.title{
+.pageHeading{
     padding: 10px !important;
 }
 .active{

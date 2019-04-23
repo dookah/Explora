@@ -25,7 +25,7 @@
     <!----------------------------------------------------------------------------------------------------------->
     <div data-role="page" id="Map" data-theme="a">
         <div data-role="header">
-            <p class="title is-3 has-text-white">Explora <span class="has-text-light has-text-weight-light titleSpan">your city</span></p>
+            <p class="title is-3 has-text-white pageHeading">Explora <span class="has-text-light has-text-weight-light titleSpan">your city</span></p>
         </div>
         <div data-role="content" id="mapContainer">
             <div id="map"></div>
@@ -47,9 +47,10 @@
 
     <div data-role="page" id="Archive" data-theme="a">
         <div data-role="header">
-            <h1 class="title is-4 has-text-white">Explora</h1>
+            <p class="title is-3 has-text-white pageHeading">Explora <span class="has-text-light has-text-weight-light">archive</span></p>
         </div>
         <div data-role="content">
+            <div id="tileContainer">
             <div class="tile is-parent">
                 <article class="tile is-child notification is-danger">
                     <button class="delete is-medium"></button>
@@ -75,6 +76,7 @@
                 </article>
             </div>
         </div>
+        </div>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>
@@ -92,7 +94,7 @@
 
     <div data-role="page" id="Send" data-theme="a">
         <div data-role="header">
-            <h1 class="title is-4 has-text-white">Explora send</h1>
+            <p class="title is-3 has-text-white pageHeading">Explora <span class="has-text-light has-text-weight-light">send</span></p>
         </div>
         <div data-role="content">
             <div class="box" id="map2"></div>
