@@ -6,6 +6,8 @@ var map2;
 
 document.addEventListener("deviceready", deviceReady, false);
 
+let titleSpans = document.getElementsByClassName("titleSpan");
+
 function deviceReady(){
     //Set the colour of the status bar if on android to match app theme
     if (cordova.platformId == 'android') {
@@ -22,6 +24,12 @@ var onLocationSuccess = function(position) {
         position.coords.longitude), 13);
     map2.setCenter(new google.maps.LatLng(position.coords.latitude, 
         position.coords.longitude), 13);
+
+    $.get( `https://eu1.locationiq.com/v1/reverse.php?key=b6baabd45dc73a&lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`, function( data ) {
+    for(let i = 0; i < titleSpans.length; i++){
+        titleSpans[i].textContent = data.address.city;
+    }
+  });
 };
 
 

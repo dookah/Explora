@@ -38,6 +38,10 @@ body{
     height: 20vh !important;
     width: auto !important;
 }
+
+.title{
+    padding: 10px !important;
+}
 .active{
     background-color: hsl(171, 100%, 41%) !important;
     color: hsl(0, 0%, 100%) !important;
