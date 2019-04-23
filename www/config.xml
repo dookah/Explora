@@ -6,12 +6,12 @@
     version     = "1.0.0" >
     
     <!-- versionCode is optional and Android only -->
-    <name>My CPD APP 19</name>
+    <name>Explora</name>
     <description>
-        this is my description app.
+        Explora. Explore what matters.
     </description> 
-    <author href="website" email="your email">
-        Wayne Christian
+    <author href="website" email="Joshualukedean@gmail.com">
+        Joshua Dean
     </author>
 	<!--
       This allows your app to load assets from all *.phongap.com domains
@@ -123,8 +123,8 @@
 <!-- iPhone 6 -->
 <splash src="assets/splash/apple/IOS-iPhone6-portrait@2x.png" platform="ios" width="750" height="1334" />
 <splash src="assets/splash/apple/IOS-iPhone6-landscape@2x.png" platform="ios" width="1334" height="750" />
-<!--<splash src="assets/splash/apple/iOS-Launch-Images_Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
-<splash src="assets/splash/apple/iOS-Launch-Images_Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" />-->
+<splash src="assets/splash/apple/iOS-Launch-Images_Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
+<splash src="assets/splash/apple/iOS-Launch-Images_Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" />
 
 <!-- iPad -->
 <splash src="assets/splash/apple/IOS-iPad-portrait.png" platform="ios" width="768" height="1024" />
