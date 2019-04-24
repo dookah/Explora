@@ -33,7 +33,6 @@ var onLocationSuccess = function (position) {
             titleSpans[i].textContent = data.address.city;
         }
     });
-    markerFactory(-34.397, 150.644, "I want to die", "right now like wtf i really really hate my life lol. Tbh the world worst is the worst");
 };
 
 
@@ -65,6 +64,7 @@ function initMap() {
         disableDefaultUI: true,
         draggable: false
     });
+    markerFactory(-34.397, 150.644, "I want to die", "right now like wtf i really really hate my life lol. Tbh the world worst is the worst");
 
 }
 
