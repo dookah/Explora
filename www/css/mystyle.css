@@ -1,11 +1,10 @@
-
 /* Set up page to take whole screen without and padding */
-body{
+body {
     margin: 0 !important;
     padding: 0 !important;
 }
 
-.inputMessage{
+.inputMessage {
     height: 47vh !important;
 }
 
@@ -13,10 +12,12 @@ body{
     background-color: hsl(171, 100%, 41%) !important;
     border: 0 !important;
 }
+
 [data-role="footer"] {
     background-color: hsl(0, 0%, 100%) !important;
     border: 0 !important;
 }
+
 /* Remove padding around map on homepage */
 #mapContainer {
     padding: 0 !important;
@@ -29,25 +30,28 @@ body{
     margin: 0 !important;
     height: 100vh;
     width: 100% !important;
-	overflow: hidden;
+    overflow: hidden;
 }
 
-#map2{
+#map2 {
     height: 20vh !important;
     width: auto !important;
 }
 
-.pageHeading{
+.pageHeading {
     padding: 10px !important;
 }
-.active{
+
+.active {
     background-color: hsl(171, 100%, 41%) !important;
     color: hsl(0, 0%, 100%) !important;
     text-decoration: none;
 }
-a{
+
+a {
     color: hsl(171, 100%, 41%) !important;
 }
-.icon{
-    color : hsl(0, 0%, 100%) !important;
+
+.icon {
+    color: hsl(0, 0%, 100%) !important;
 }
