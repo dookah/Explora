@@ -18,12 +18,43 @@ function displayToast(title, message, redirect) {
 function saveMarker() {
     //How to access the marker content through the DOM 
     //this.document.activeElement.innerText;
+    //Split the accessed text into an array
+    // [0] = Title, [1] = Message
     var SplitMarker = this.document.activeElement.innerText.split('\n\n');
+
+    //Get local storage messages
+    var savedMessages = localStorage.getItem("savedMessages");
+    //Parse them into a string
+    var savedMessages = JSON.parse(savedMessages);
+
+    //If no saved messages
+    if (savedMessages == null) {
+        //Create an array to hold messages
+        savedMessages = [];
+        //Push new Object into created array
+        savedMessages.push({
+            title: SplitMarker[0],
+            message: SplitMarker[1]
+        })
+        //Push strinfiied object array into local storage
+        localStorage.setItem("savedMessages", JSON.stringify(savedMessages));
+    } else {
+        //If we areadt have local storage 
+        //Push new message into array
+        savedMessages.push({
+            title: SplitMarker[0],
+            message: SplitMarker[1]
+        })
+        //Parse to string and save to local storage again
+        localStorage.setItem("savedMessages", JSON.stringify(savedMessages));
+    }
+    //Update the archive cards with the new message
     cardFactory(SplitMarker[0], SplitMarker[1]);
 
-    displayToast('Saved!', 'Message added to archive.', '#Archive')
-
+    //Tell user that their marker has been saved
+    displayToast('Saved!', 'Message added to archive.', '#Archive');
 }
+
 
 function cardFactory(heading, message) {
     //List out all possible card colour classes
