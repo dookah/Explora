@@ -1,4 +1,3 @@
-cardFactory("I hate this city", "I want to die");
 //Factory to make Card on page
 //INPUT : HEADING, MESSAGE
 //OUTPUT : Card on archive page 
@@ -19,10 +18,50 @@ function cardFactory(heading, message) {
     //Use JQuerys append to add html to the page
     $("#tileContainer").append(htmlToAppend);
 }
+
+//Code runs when archive page is shown
+//Re-renders all saved messages from local storage
 $(document).delegate('#Archive', 'pageshow', function () {
+    //Clear the page on load
+    $('#tileContainer').empty();
 
+    //Load all the archive items
+    savedMessages = localStorage.getItem("savedMessages");
+    //Convert from string to array of JSON objects
+    savedMessages = JSON.parse(savedMessages);
 
-});
-ScrollReveal().reveal('.tile', {
-    interval: 300
+    //Ensure saved messages exists and has an item in it
+    if (savedMessages != null && savedMessages.length >= 1) {
+        //Loop through messages
+        for (var i = 0; i < savedMessages.length; i++) {
+            //take each message and send it to card factory to make archive cards
+            cardFactory(savedMessages[i].title, savedMessages[i].message);
+        }
+    } else {
+        $('#tileContainer').append('<span class="tag is-large is-danger"> No Saved Messages. </span>');
+    }
+
+    //Implementation for delete message
+    //Get all the delete buttons
+    deleteButtons = document.getElementsByClassName("delete");
+    //Get all the message cards
+    messageCards = document.getElementsByClassName("tile");
+    //Loop through each delete button using let to bind each instance
+    for (let i = 0; i < deleteButtons.length; i++) {
+        //Add event listener to listen to click of delete button
+        deleteButtons[i].addEventListener("click", function () {
+            savedMessages.splice(i, 1);
+            savedMessages = JSON.stringify(savedMessages);
+            localStorage.setItem("savedMessages", savedMessages);
+            iziToast.warning({
+                title: "Deleted!",
+                message: "Message successfully deleted.",
+                timeout: 1250,
+                onClosing: function (instance, toast, closedBy) {
+                    $.mobile.pageContainer.pagecontainer("change", '#Map');
+                }
+            });
+        });
+    }
+
 });

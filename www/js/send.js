@@ -7,7 +7,7 @@ function displayToast(title, message, redirect) {
         title: title,
         message: message,
         timeout: 1650,
-        onClosed: function (instance, toast, closedBy) {
+        onClosing: function (instance, toast, closedBy) {
             $.mobile.pageContainer.pagecontainer("change", redirect);
         }
     });
@@ -24,11 +24,9 @@ function saveMarker() {
 
     //Get local storage messages
     var savedMessages = localStorage.getItem("savedMessages");
-    //Parse them into a string
-    var savedMessages = JSON.parse(savedMessages);
 
     //If no saved messages
-    if (savedMessages == null) {
+    if (savedMessages == null || savedMessages == "") {
         //Create an array to hold messages
         savedMessages = [];
         //Push new Object into created array
@@ -39,6 +37,7 @@ function saveMarker() {
         //Push strinfiied object array into local storage
         localStorage.setItem("savedMessages", JSON.stringify(savedMessages));
     } else {
+        var savedMessages = JSON.parse(savedMessages);
         //If we areadt have local storage 
         //Push new message into array
         savedMessages.push({
@@ -48,9 +47,6 @@ function saveMarker() {
         //Parse to string and save to local storage again
         localStorage.setItem("savedMessages", JSON.stringify(savedMessages));
     }
-    //Update the archive cards with the new message
-    cardFactory(SplitMarker[0], SplitMarker[1]);
-
     //Tell user that their marker has been saved
     displayToast('Saved!', 'Message added to archive.', '#Archive');
 }
