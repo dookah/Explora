@@ -4,6 +4,10 @@
 var map;
 var map2;
 
+//Device location
+var lat;
+var lng;
+
 document.addEventListener("deviceready", deviceReady, false);
 
 let titleSpans = document.getElementsByClassName("titleSpan");
@@ -22,6 +26,9 @@ function deviceReady() {
 
 //Fired when location is found
 var onLocationSuccess = function (position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+
     //Set center of map to current location
     map.setCenter(new google.maps.LatLng(position.coords.latitude,
         position.coords.longitude), 13);
@@ -111,3 +118,14 @@ function contentStringFactory(title, message) {
 function getAllMessages() {
 
 }
+
+$(document).delegate('#Send', 'pageshow', function () {
+    navigator.geolocation.getCurrentPosition(onLocationSuccessSend, onError);
+});
+
+//Fired when location is found
+var onLocationSuccessSend = function (position) {
+
+    $("#lat").val(lat);
+    $("#lng").val(lng);
+};
