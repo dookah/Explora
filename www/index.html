@@ -75,23 +75,31 @@
     <!----------------------------------------------------------------------------------------------------------->
 
     <div data-role="page" id="Send" data-theme="a">
+        <!-- Heading of page -->
         <div data-role="header">
             <p class="title is-3 has-text-white pageHeading">Explora <span
                     class="has-text-light has-text-weight-light">send</span></p>
         </div>
+        <!-- Content of page -->
         <div data-role="content">
+            <!-- Small contextulised map to remind user of their location -->
             <div class="box" id="map2"></div>
+            <!-- Form posts to Node server, Node server handles it into MLAB -->
             <form method="post" action="https://cpd-app.herokuapp.com/addMessage">
+                <!-- User input section with title and message -->
                 <input class="input" type="text" placeholder="Title" name="title" />
                 <textarea name="message" class="textarea is-primary inputMessage" placeholder="Message"
                     maxlength='280'></textarea>
-                <input id="lat" name="lat" value="1234" />
-                <input id="lng" name="lng" value="1234" />
+                <!-- Hidden inputs for location, continously updated with watched location-->
+                <input id="lat" name="lat" value="1234" type="hidden" />
+                <input id="lng" name="lng" value="1234" type="hidden" />
+                <!-- Submit button, submits to Heroku server, pushed into mLAB -->
                 <button class="button is-primary is-fullwidth" type="submit" name="action">
                     <i class="icon far fa-paper-plane"></i>
                 </button>
             </form>
         </div>
+        <!-- Footer with navbar -->
         <div data-role="footer" data-position="fixed" data-tap-toggle="false">
             <div data-role="navbar">
                 <ul>

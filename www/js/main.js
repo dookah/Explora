@@ -40,7 +40,6 @@ var onLocationSuccess = function (position) {
             titleSpans[i].textContent = data.address.city;
         }
     });
-    markerFactory(position.coords.latitude, position.coords.longitude, "I want to die", "right now like wtf i really really hate my life lol. Tbh the world worst is the worst");
 };
 
 
@@ -120,16 +119,6 @@ function getAllMessages() {
 }
 
 $(document).delegate('#Send', 'pageshow', function () {
-    navigator.geolocation.getCurrentPosition(onLocationSuccessSend, onError);
-});
-
-//Fired when location is found
-var onLocationSuccessSend = function (position) {
-    //Update the position of the device when send page loads
-    lat = position.coords.latitude;
-    lng = position.coords.longitude;
-
-    //set invisible form values to updated position
     $("#lat").val(lat);
     $("#lng").val(lng);
-};
+});
