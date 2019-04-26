@@ -18,7 +18,7 @@ function deviceReady() {
         StatusBar.backgroundColorByHexString("#00C4A7");
     }
     //Request devices location
-    navigator.geolocation.getCurrentPosition(onLocationSuccess, onError);
+    navigator.geolocation.watchPosition(onLocationSuccess, onError);
 
     //Function to get all messages from database
     getAllMessages();
@@ -125,7 +125,11 @@ $(document).delegate('#Send', 'pageshow', function () {
 
 //Fired when location is found
 var onLocationSuccessSend = function (position) {
+    //Update the position of the device when send page loads
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
 
+    //set invisible form values to updated position
     $("#lat").val(lat);
     $("#lng").val(lng);
 };
