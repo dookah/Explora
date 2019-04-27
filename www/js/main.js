@@ -45,6 +45,10 @@ var onLocationSuccess = function (position) {
     $("#lat").val(lat);
     $("#lng").val(lng);
 
+    //Clear markers off map every render 
+    setMapOnAll(null);
+    //Render all markers again (Not most efficient but markers arent intensive)
+    //Will need some refactoring when working at scale
     renderMarkers();
 };
 
