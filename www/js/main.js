@@ -31,9 +31,9 @@ var onLocationSuccess = function (position) {
 
     //Set center of map to current location
     map.setCenter(new google.maps.LatLng(position.coords.latitude,
-        position.coords.longitude), 18);
+        position.coords.longitude));
     map2.setCenter(new google.maps.LatLng(position.coords.latitude,
-        position.coords.longitude), 13);
+        position.coords.longitude));
 
     $.get(`https://eu1.locationiq.com/v1/reverse.php?key=b6baabd45dc73a&lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`, function (data) {
         for (let i = 0; i < titleSpans.length; i++) {
@@ -52,7 +52,7 @@ var onLocationSuccess = function (position) {
 function renderMarkers() {
     $.get("https://cpd-app.herokuapp.com/getMessage", function (data) {
         Object.keys(data).forEach(function (key) {
-            markerFactory(data[key].lat, data[key].lng, data[key].title, data[key].message);
+            markerFactory(parseFloat(data[key].lat), parseFloat(data[key].lng), data[key].title, data[key].message);
         })
     });
 }

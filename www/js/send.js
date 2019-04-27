@@ -1,4 +1,7 @@
-$("#messageButton").bind('tap', function () {
+var submitBtn = document.getElementById("#messageButton");
+
+submitBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // comment this out and the browser will redirect
     displayToast('Saved!', 'Message added to map.', '#Map');
 })
 
