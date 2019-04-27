@@ -102,9 +102,9 @@ function cardFactory(heading, message) {
 }
 
 function offline() {
-    alert("offline");
+    $('#messageButton').prop('disabled', true);
 }
 
 function online() {
-    alert("online");
+    $('#messageButton').prop('disabled', false);
 }
