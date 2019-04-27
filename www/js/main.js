@@ -26,7 +26,6 @@ function deviceReady() {
 
 //Fired when location is found
 var onLocationSuccess = function (position) {
-    alert("Location Updated");
 
     lat = position.coords.latitude;
     lng = position.coords.longitude;
@@ -57,8 +56,6 @@ function renderMarkers() {
 
     //Call api to get all markers from the database
     $.get("https://cpd-app.herokuapp.com/getMessage", function (data) {
-        alert("api called");
-
         //loop through each returned database item
         Object.keys(data).forEach(function (key) {
             //send data to marker factory to update map markers
