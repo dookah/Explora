@@ -1,4 +1,4 @@
-var submitBtn = document.getElementById("#messageButton");
+var submitBtn = document.getElementById("messageButton");
 
 submitBtn.addEventListener('click', function (e) {
     e.preventDefault(); // comment this out and the browser will redirect
