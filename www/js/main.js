@@ -31,7 +31,7 @@ var onLocationSuccess = function (position) {
 
     //Set center of map to current location
     map.setCenter(new google.maps.LatLng(position.coords.latitude,
-        position.coords.longitude), 13);
+        position.coords.longitude), 18);
     map2.setCenter(new google.maps.LatLng(position.coords.latitude,
         position.coords.longitude), 13);
 
@@ -40,7 +40,22 @@ var onLocationSuccess = function (position) {
             titleSpans[i].textContent = data.address.city;
         }
     });
+
+    //Update Send pages lat and longi hidden form elements when location is updated
+    $("#lat").val(lat);
+    $("#lng").val(lng);
+
+    renderMarkers();
 };
+
+
+function renderMarkers() {
+    $.get("https://cpd-app.herokuapp.com/getMessage", function (data) {
+        Object.keys(data).forEach(function (key) {
+            markerFactory(data[key].lat, data[key].lng, data[key].title, data[key].message);
+        })
+    });
+}
 
 
 //Only fires if error is thrown
@@ -117,8 +132,3 @@ function contentStringFactory(title, message) {
 function getAllMessages() {
 
 }
-
-$(document).delegate('#Send', 'pageshow', function () {
-    $("#lat").val(lat);
-    $("#lng").val(lng);
-});

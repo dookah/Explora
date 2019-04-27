@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Load in Cordova injected code -->
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>s
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
 
     <!--Link my stylesheet-->
@@ -87,12 +87,12 @@
             <!-- Form posts to Node server, Node server handles it into MLAB -->
             <form method="post" action="https://cpd-app.herokuapp.com/addMessage">
                 <!-- User input section with title and message -->
-                <input class="input" type="text" placeholder="Title" name="title" />
-                <textarea name="message" class="textarea is-primary inputMessage" placeholder="Message"
-                    maxlength='280'></textarea>
+                <input class="input" type="text" placeholder="Title" name="title" required />
+                <textarea name="message" class="textarea is-primary inputMessage" placeholder="Message" maxlength='280'
+                    required></textarea>
                 <!-- Hidden inputs for location, continously updated with watched location-->
-                <input id="lat" name="lat" value="1234" type="hidden" />
-                <input id="lng" name="lng" value="1234" type="hidden" />
+                <input id="lat" name="lat" type="hidden" required />
+                <input id="lng" name="lng" type="hidden" required />
                 <!-- Submit button, submits to Heroku server, pushed into mLAB -->
                 <button class="button is-primary is-fullwidth" type="submit" name="action">
                     <i class="icon far fa-paper-plane"></i>

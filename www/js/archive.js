@@ -22,8 +22,6 @@ function cardFactory(heading, message) {
 //Code runs when archive page is shown
 //Re-renders all saved messages from local storage
 $(document).delegate('#Archive', 'pageshow', function () {
-    //Clear the page on load
-    $('#tileContainer').empty();
 
     //Load all the archive items
     savedMessages = localStorage.getItem("savedMessages");
@@ -64,4 +62,15 @@ $(document).delegate('#Archive', 'pageshow', function () {
         });
     }
 
+});
+
+//-------------------------------------------------
+//When map or Send page shows wipe the archive page 
+$(document).delegate('#Map', 'pageshow', function () {
+    //Clear the page on load
+    $('#tileContainer').empty();
+});
+$(document).delegate('#Send', 'pageshow', function () {
+    //Clear the page on load
+    $('#tileContainer').empty();
 });
