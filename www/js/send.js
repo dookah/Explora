@@ -1,3 +1,6 @@
+document.addEventListener("offline", offline, false);
+document.addEventListener("online", online, false);
+
 var submitBtn = document.getElementById("messageButton");
 
 $("#messageForm").submit(function (e) {
@@ -96,4 +99,12 @@ function cardFactory(heading, message) {
 
     //Use JQuerys append to add html to the page
     $("#tileContainer").append(htmlToAppend);
+}
+
+function offline() {
+    alert("offline");
+}
+
+function online() {
+    alert("online");
 }
