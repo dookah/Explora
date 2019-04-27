@@ -85,14 +85,14 @@
             <!-- Small contextulised map to remind user of their location -->
             <div class="box" id="map2"></div>
             <!-- Form posts to Node server, Node server handles it into MLAB -->
-            <form method="post" action="https://cpd-app.herokuapp.com/addMessage">
+            <form id="messageForm" method="post" action="https://cpd-app.herokuapp.com/addMessage">
                 <!-- User input section with title and message -->
-                <input class="input" type="text" placeholder="Title" name="title" required />
-                <textarea name="message" class="textarea is-primary inputMessage" placeholder="Message" maxlength='280'
-                    required></textarea>
+                <input class="input" id="title" type="text" placeholder="Title" name="title" required />
+                <textarea name="message" id="message" class="textarea is-primary inputMessage" placeholder="Message"
+                    maxlength='280' required></textarea>
                 <!-- Hidden inputs for location, continously updated with watched location-->
-                <input id="lat" name="lat" type="hidden" required />
-                <input id="lng" name="lng" type="hidden" required />
+                <input id="lat" name="lat" id="lat" type="hidden" required />
+                <input id="lng" name="lng" id="lng" type="hidden" required />
                 <!-- Submit button, submits to Heroku server, pushed into mLAB -->
                 <button class="button is-primary is-fullwidth" id="messageButton" type="submit" name="action">
                     <i class="icon far fa-paper-plane"></i>

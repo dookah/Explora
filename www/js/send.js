@@ -1,7 +1,32 @@
 var submitBtn = document.getElementById("messageButton");
 
+$("#messageForm").submit(function (e) {
+    //Stop form being posted
+    e.preventDefault();
+    //Post form with ajax to prevent redirect
+    $.ajax({
+        url: 'https://cpd-app.herokuapp.com/addMessage',
+        dataType: 'json',
+        type: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            "title": $('#title').val(),
+            "message": $('#message').val(),
+            "lat": $('#lat').val(),
+            "lng": $('#lng').val()
+        }),
+        processData: false,
+        success: function (data, textStatus, jQxhr) {
+            alert("yay");
+        },
+        error: function (jqXhr, textStatus, errorThrown) {
+            console.log(errorThrown);
+        }
+    });
+});
+
 submitBtn.addEventListener('click', function (e) {
-    e.preventDefault(); // comment this out and the browser will redirect
+    // Once the user sends a message let them know and redirect
     displayToast('Saved!', 'Message added to map.', '#Map');
 })
 
