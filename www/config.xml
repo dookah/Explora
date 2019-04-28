@@ -78,9 +78,11 @@
  
 
 	<!--//these are generic not good enough for a live build - you will nedd to be os and device specific (android can use 9 slice png)-->
-	<!--<icon src="icon.png" />-->
-
+    <!--
+	<icon src="icon.png" />
+    -->
 	<splash src="splash.png" />
+
 	<platform name="ios">
 			<icon src="icon.png" />
  <!-- iOS 8.0+ -->
@@ -137,18 +139,19 @@
 </platform>
 <splash src="splash.png" />
 
-<icon platform="android" qualifier="mdpi" src="www/assets/icons/android/mimmap-mdpi/ic_launcher.png"/>
-<icon platform="android" qualifier="hdpi" src="www/assets/icons/android/mimmap-hdpi/ic_launcher.png"/>
-<icon platform="android" qualifier="xhdpi" src="www/assets/icons/android/mimmap-xhdpi/ic_launcher.png"/>
-<icon platform="android" qualifier="xxhdpi" src="www/assets/icons/android/mimmap-xxhdpi/ic_launcher.png"/>
-<icon platform="android" qualifier="xxxhdpi" src="www/assets/icons/android/mimmap-xxxhdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="mdpi" src="assets/icons/android/mimmap-mdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="hdpi" src="assets/icons/android/mimmap-hdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="xhdpi" src="assets/icons/android/mimmap-xhdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="xxhdpi" src="assets/icons/android/mimmap-xxhdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="xxxhdpi" src="assets/icons/android/mimmap-xxxhdpi/ic_launcher.png"/>
 
+<!--
 <splash platform="android" qualifier="ldpi" src="assets/splash/android/screen-ldpi-portrait.png" />
 <splash platform="android" qualifier="mdpi" src="assets/splash/android/screen-mdpi-portrait.png" />
 <splash platform="android" qualifier="hdpi" src="assets/splash/android/screen-hdpi-portrait.png" />
 <splash platform="android" qualifier="xhdpi" src="assets/splash/android/screen-xhdpi-portrait.png" />
 
-
+-->
     <access origin="*"/>
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
     <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
