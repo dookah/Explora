@@ -87,7 +87,9 @@
             <!-- Form posts to Node server, Node server handles it into MLAB -->
             <form id="messageForm" method="post" action="https://cpd-app.herokuapp.com/addMessage">
                 <!-- User input section with title and message -->
-                <input class="input" id="title" type="text" placeholder="Title" name="title" required />
+
+                <input data-wrapper-class="input is-primary" id="title" type="text" placeholder="Title" name="title"
+                    required />
                 <textarea name="message" id="message" class="textarea is-primary inputMessage" placeholder="Message"
                     maxlength='280' required></textarea>
                 <!-- Hidden inputs for location, continously updated with watched location-->

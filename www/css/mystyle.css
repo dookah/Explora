@@ -27,12 +27,17 @@ body {
     margin: 0 !important;
 }
 
+#Map {
+    overflow: hidden;
+}
+
 /* Make map whole size of the screen and hide and overflow */
 #map {
     padding: 0 !important;
     margin: 0 !important;
     height: 100vh;
     width: 100% !important;
+
 
 }
 
