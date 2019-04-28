@@ -19,10 +19,18 @@ let titleSpans = document.getElementsByClassName("titleSpan");
 
 function deviceReady() {
 
+    //--- Functions to prevent the search box interupting the user ---
     document.getElementById("map").addEventListener("click", function () {
         document.getElementById("locationSearch").blur();
     })
+    document.getElementById("locationSearch").addEventListener("keydown", function () {
+        if (e.keyCode === 13) {
+            document.getElementById("locationSearch").blur();
+        }
+    })
 
+    // -- Set up the current location button --
+    // On click move the map to the users location
     document.getElementById("currentLocation").addEventListener("click", function () {
         map.setCenter(new google.maps.LatLng(lat, lng));
     });
