@@ -32,19 +32,37 @@
                     class="has-text-light has-text-weight-light titleSpan is-lowercase">your city</span></p>
         </div>
         <div data-role="content" id="mapContainer">
+            <div id="currentLocation">
+                <a class="button"><i class="fas fa-location-arrow"></i></a>
+            </div>
+            <!--Input to search for a new location-->
+            <div class="locationInput">
+                <div class="field has-addons locationInputField">
+                    <p class="control is-expanded">
+                        <input class="input locationInputField" type="text" placeholder="Search Location">
+                    </p>
+                    <p class="control">
+                        <a class="button submitBtn is-primary has-text-white">
+                            Search
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!--Map container-->
             <div id="map"></div>
-        </div>
-        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#Archive" data-transition="fade">Archive</a></li>
-                    <li class="active"><a href="#Map" data-transition="fade" class="active">Map</a></li>
-                    <li><a href="#Send" data-transition="fade">Send</a></li>
-                </ul>
+            <!--Bottom right button to go current location-->
+
+            <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Archive" data-transition="fade">Archive</a></li>
+                        <li class="active"><a href="#Map" data-transition="fade" class="active">Map</a></li>
+                        <li><a href="#Send" data-transition="fade">Send</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-
     <!----------------------------------------------------------------------------------------------------------->
     <!---------------------------------------- Archive Page -------------------------------------------->
     <!----------------------------------------------------------------------------------------------------------->
@@ -87,18 +105,27 @@
             <!-- Form posts to Node server, Node server handles it into MLAB -->
             <form id="messageForm" method="post" action="https://cpd-app.herokuapp.com/addMessage">
                 <!-- User input section with title and message -->
-
-                <input data-wrapper-class="input is-primary" id="title" type="text" placeholder="Title" name="title"
-                    required />
-                <textarea name="message" id="message" class="textarea is-primary inputMessage" placeholder="Message"
-                    maxlength='280' required></textarea>
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-primary" id="title" type="text" placeholder="Title" name="title"
+                            required />
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <textarea name="message" id="message" class="textarea is-primary inputMessage"
+                            placeholder="Message" maxlength='280' required></textarea>
+                    </div>
+                </div>
                 <!-- Hidden inputs for location, continously updated with watched location-->
                 <input id="lat" name="lat" id="lat" type="hidden" required />
                 <input id="lng" name="lng" id="lng" type="hidden" required />
                 <!-- Submit button, submits to Heroku server, pushed into mLAB -->
-                <button class="button is-primary is-fullwidth" id="messageButton" type="submit" name="action">
-                    <i class="icon far fa-paper-plane"></i>
-                </button>
+                <div class="field">
+                    <button class="button is-primary is-fullwidth" id="messageButton" type="submit" name="action">
+                        <i class="icon far fa-paper-plane"></i>
+                    </button>
+                </div>
             </form>
         </div>
         <!-- Footer with navbar -->

@@ -8,11 +8,19 @@ var map2;
 var lat;
 var lng;
 
+
+
 document.addEventListener("deviceready", deviceReady, false);
+
 
 let titleSpans = document.getElementsByClassName("titleSpan");
 
 function deviceReady() {
+
+    document.getElementById("currentLocation").addEventListener("click", function () {
+        map.setCenter(new google.maps.LatLng(lat, lng));
+    });
+
     //Set the colour of the status bar if on android to match app theme
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#00C4A7");
@@ -31,13 +39,15 @@ var onLocationSuccess = function (position) {
     lng = position.coords.longitude;
 
     //Set center of map to current location
-    map.setCenter(new google.maps.LatLng(position.coords.latitude,
-        position.coords.longitude));
+    //Repeatedly resets map, removed due to feedback given. 
+    //map.setCenter(new google.maps.LatLng(position.coords.latitude,position.coords.longitude));
     map2.setCenter(new google.maps.LatLng(position.coords.latitude,
         position.coords.longitude));
 
+    //Reverse Geocode the coordinates using location iq API to get the city the user is currently in 
     $.get(`https://eu1.locationiq.com/v1/reverse.php?key=b6baabd45dc73a&lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`, function (data) {
         for (let i = 0; i < titleSpans.length; i++) {
+            //Update the title span class with the city returned from the api
             titleSpans[i].textContent = data.address.city;
         }
     });

@@ -8,7 +8,7 @@ body {
 }
 
 .inputMessage {
-    height: 46vh !important;
+    height: 40vh !important;
 }
 
 [data-role="header"] {
@@ -62,4 +62,32 @@ a {
 
 .icon {
     color: hsl(0, 0%, 100%) !important;
+}
+
+.locationInput {
+    position: absolute;
+    z-index: 999999999999999;
+    margin-top: 10px;
+    width: 95vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.locationInputField {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.submitBtn {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+#currentLocation {
+    position: absolute;
+    z-index: 9999999999999;
+    bottom: 45px;
+    right: 8px;
 }

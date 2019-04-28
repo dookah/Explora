@@ -65,6 +65,10 @@
     <plugin name="cordova-plugin-statusbar" />
     <plugin name="cordova-plugin-network-information" />
 
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Location access needed to drop messages at your location.</string>
+    </edit-config>
+
 	
     <!-- Single default icon -->
 	<icon src="icon.png" />
