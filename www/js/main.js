@@ -8,6 +8,8 @@ var map2;
 var lat;
 var lng;
 
+var intial = false;
+
 
 
 document.addEventListener("deviceready", deviceReady, false);
@@ -25,7 +27,8 @@ function deviceReady() {
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#00C4A7");
     }
-    //Request devices location
+
+    //Request device location if the user moves
     navigator.geolocation.watchPosition(onLocationSuccess, onError);
 
     //Function to get all messages from database
@@ -34,6 +37,14 @@ function deviceReady() {
 
 //Fired when location is found
 var onLocationSuccess = function (position) {
+
+    //If just loaded app move main map to users location
+    if (intial == false) {
+        map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        //flip when map has updated l
+        intial = true;
+    }
+
 
     lat = position.coords.latitude;
     lng = position.coords.longitude;
