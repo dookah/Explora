@@ -137,7 +137,6 @@
 <splash src="assets/splash/apple/IOS-iPadAirMini-landscape@2x.png" platform="ios" width="2048" height="1536" />
 	
 </platform>
-<splash src="splash.png" />
 
 <icon platform="android" qualifier="mdpi" src="assets/icons/android/mimmap-mdpi/ic_launcher.png"/>
 <icon platform="android" qualifier="hdpi" src="assets/icons/android/mimmap-hdpi/ic_launcher.png"/>
