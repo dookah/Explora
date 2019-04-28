@@ -19,6 +19,10 @@ let titleSpans = document.getElementsByClassName("titleSpan");
 
 function deviceReady() {
 
+    document.getElementById("map").addEventListener("click", function () {
+        document.getElementById("locationSearch").blur();
+    })
+
     document.getElementById("currentLocation").addEventListener("click", function () {
         map.setCenter(new google.maps.LatLng(lat, lng));
     });
@@ -41,7 +45,7 @@ var onLocationSuccess = function (position) {
     //If just loaded app move main map to users location
     if (intial == false) {
         map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-        //flip when map has updated l
+        //flip when map has updated
         intial = true;
     }
 
