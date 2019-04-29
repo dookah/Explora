@@ -12,6 +12,13 @@ var intial = false;
 
 
 
+
+//``
+
+
+
+
+
 document.addEventListener("deviceready", deviceReady, false);
 
 
@@ -171,6 +178,19 @@ function contentStringFactory(title, message) {
     return contentString;
 }
 
-function getAllMessages() {
+//Function for search box 
+document.getElementById("searchFormSubmit").addEventListener("click", function () {
+    //Get the value of the searched input
+    let searchCriteria = $("#locationSearch").val();
+    //create an API URI with the search criteria
+    let searchString = `https://eu1.locationiq.com/v1/search.php?key=b6baabd45dc73a&q=${searchCriteria}&format=json`;
+    //Jquery Ajax request with the above string
+    $.get(searchString, function (data) {
+        //get the returned coordinates
+        let searchlat = data[0].lat;
+        let searchlng = data[0].lon;
+        //set the map to the returned coordinates
+        map.setCenter(new google.maps.LatLng(searchlat, searchlng));
+    });
 
-}
+})
