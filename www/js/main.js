@@ -19,13 +19,15 @@ let titleSpans = document.getElementsByClassName("titleSpan");
 
 function deviceReady() {
 
+    let locationSearch = document.getElementById("locationSearch");
+
     //--- Functions to prevent the search box interupting the user ---
     document.getElementById("map").addEventListener("click", function () {
-        document.getElementById("locationSearch").blur();
+        locationSearch.blur();
     })
-    document.getElementById("locationSearch").addEventListener("keydown", function () {
-        if (e.keyCode === 13) {
-            document.getElementById("locationSearch").blur();
+    document.getElementById("locationSearch").addEventListener("keydown", function (e) {
+        if (e.keyCode == 13) {
+            locationSearch.blur();
         }
     })
 
