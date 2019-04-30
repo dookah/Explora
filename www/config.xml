@@ -66,10 +66,16 @@
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-ios-location-permissions" />
 
+
+    <!-- Needed for iOS location -->
     <gap:config-file platform="ios" parent="NSLocationAlwaysUsageDescription" overwrite="true">
         <string>Tracking location for app to work</string>
     </gap:config-file>
 
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Tracking location for app to work</string>
+    </edit-config>
+    <!---->
 	
     <!-- Single default icon -->
 	<icon src="icon.png" />
