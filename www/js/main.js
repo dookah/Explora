@@ -1,33 +1,22 @@
 "use strict";
-
-//Create an instance of the map
+//Create an instance of tboth main and send maps
 var map;
 var map2;
-
-//Device location
+//Variables for devices CURRENT location
 var lat;
 var lng;
-
+//Flips when location has been found intially
 var intial = false;
 
-
-
-
-//``
-
-
-
-
-
-document.addEventListener("deviceready", deviceReady, false);
-
-
+//Get all the titles accross all the pages
 let titleSpans = document.getElementsByClassName("titleSpan");
 
+//Listens for when API ready
+document.addEventListener("deviceready", deviceReady, false);
+//Runs when API loaded
 function deviceReady() {
-
+    //Get the location searh bar
     let locationSearch = document.getElementById("locationSearch");
-
     //--- Functions to prevent the search box interupting the user ---
     document.getElementById("map").addEventListener("click", function () {
         locationSearch.blur();
@@ -58,15 +47,13 @@ function deviceReady() {
 
 //Fired when location is found
 var onLocationSuccess = function (position) {
-
     //If just loaded app move main map to users location
     if (intial == false) {
         map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
         //flip when map has updated
         intial = true;
     }
-
-
+    //Update the global location variables with the users current location
     lat = position.coords.latitude;
     lng = position.coords.longitude;
 
@@ -93,9 +80,8 @@ var onLocationSuccess = function (position) {
     renderMarkers();
 };
 
-
+//Function to grab all markers from API database 
 function renderMarkers() {
-
     //Call api to get all markers from the database
     $.get("https://cpd-app.herokuapp.com/getMessage", function (data) {
         //loop through each returned database item
@@ -106,7 +92,6 @@ function renderMarkers() {
     });
 }
 
-
 //Only fires if error is thrown
 function onError(error) {
     //Alert user of error 
@@ -114,9 +99,9 @@ function onError(error) {
         'message: ' + error.message + '\n');
 }
 
-
 //Initilise maps
 function initMap() {
+    //Set up main page map to random location in australia
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: -34.397,
@@ -125,7 +110,7 @@ function initMap() {
         zoom: 13,
         disableDefaultUI: true
     });
-
+    //Set up send page map to same location
     map2 = new google.maps.Map(document.getElementById('map2'), {
         center: {
             lat: -34.397,
@@ -135,9 +120,7 @@ function initMap() {
         disableDefaultUI: true,
         draggable: false
     });
-
 }
-
 
 //Factory function to create markers
 //IN: LATITUDE, LONGITUDE, TITLE OF MESSAGE, MESSAGE CONTENT
