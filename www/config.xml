@@ -57,7 +57,9 @@
 	NOTE THAT ONLY IMPORT WHAT YOU NEED - WITH IOS 10 THERE ARE ADDITIONAL SECURITY FEATURES THAT MAY HINDER GETTING IT ONTO THE APP STORE 
 	
 	-->
-	
+	<edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Tracking location for app to work</string>
+    </edit-config>
     <!-- Core plugins -->
 
     <plugin name="cordova-plugin-console" />
@@ -68,13 +70,7 @@
 
 
     <!-- Needed for iOS location -->
-    <gap:config-file platform="ios" parent="NSLocationAlwaysUsageDescription" overwrite="true">
-        <string>Tracking location for app to work</string>
-    </gap:config-file>
-
-    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-        <string>Tracking location for app to work</string>
-    </edit-config>
+    
     <!---->
 	
     <!-- Single default icon -->
