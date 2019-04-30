@@ -65,7 +65,7 @@
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-statusbar" />
     <plugin name="cordova-plugin-network-information" />
-    <plugin name="cordova-plugin-ios-location-permissions" />
+
 
 
     <!-- Needed for iOS location -->
