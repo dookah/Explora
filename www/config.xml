@@ -64,7 +64,7 @@
     <plugin name="cordova-plugin-geolocation" spec="2.4.3"/>
     <plugin name="cordova-plugin-statusbar" />
     <plugin name="cordova-plugin-network-information" />
-    <plugin name="cordova-plugin-ios-location-permissions">
+    <plugin name="cordova-plugin-ios-location-permissions" />
 
     <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
         <string>Location access needed to drop messages at your location.</string>
