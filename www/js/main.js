@@ -37,9 +37,10 @@ function deviceReady() {
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#00C4A7");
     }
-    navigator.geolocation.getCurrentPosition(onLocationSuccess, onError);
+
     //Request device location if the user moves
-    navigator.geolocation.watchPosition(onLocationSuccess, onError);
+    //navigator.geolocation.watchPosition(onLocationSuccess, onError);
+    navigator.geolocation.getCurrentPosition(onLocationSuccess, onError);
 
     //Function to get all messages from database
     getAllMessages();
