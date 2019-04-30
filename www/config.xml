@@ -66,9 +66,9 @@
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-ios-location-permissions" />
 
-    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-        <string>Location access needed to drop messages at your location.</string>
-    </edit-config>
+    <gap:config-file platform="ios" parent="NSLocationAlwaysUsageDescription" overwrite="true">
+        <string>Tracking location for app to work</string>
+    </gap:config-file>
 
 	
     <!-- Single default icon -->
