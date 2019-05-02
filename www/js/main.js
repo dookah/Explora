@@ -39,8 +39,7 @@ function deviceReady() {
     }
 
     //Request device location if the user moves
-    //navigator.geolocation.watchPosition(onLocationSuccess, onError);
-    navigator.geolocation.getCurrentPosition(onLocationSuccess, onError);
+    navigator.geolocation.watchPosition(onLocationSuccess, onError);
 
     //Function to get all messages from database
     getAllMessages();
