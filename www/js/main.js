@@ -64,7 +64,7 @@ var onLocationSuccess = function (position) {
         position.coords.longitude));
 
     //Reverse Geocode the coordinates using location iq API to get the city the user is currently in 
-    $.get(`https://eu1.locationiq.com/v1/reverse.php?key=b6baabd45dc73a&lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`, function (data) {
+    $.get(`https://eu1.locationiq.com/v1/reverse.php?key=KEYHERE&lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`, function (data) {
         for (let i = 0; i < titleSpans.length; i++) {
             //Update the title span class with the city returned from the api
             titleSpans[i].textContent = data.address.city;
@@ -166,7 +166,7 @@ document.getElementById("searchFormSubmit").addEventListener("click", function (
     //Get the value of the searched input
     let searchCriteria = $("#locationSearch").val();
     //create an API URI with the search criteria
-    let searchString = `https://eu1.locationiq.com/v1/search.php?key=b6baabd45dc73a&q=${searchCriteria}&format=json`;
+    let searchString = `https://eu1.locationiq.com/v1/search.php?key=KEYHERE${searchCriteria}&format=json`;
     //Jquery Ajax request with the above string
     $.get(searchString, function (data) {
         //get the returned coordinates
